@@ -28,8 +28,10 @@ jobs:
           npm run build --if-present
           npm run test --if-present
           cp package.production.json dist/package.json
-          cp -r dist/* ../../
-          cd ../../
+          cp -r dist/* ../..
+          pwd
+          cd ../..
+          pwd
           ls -la
 
 
