@@ -30,13 +30,11 @@ jobs:
 
       # Do not upload node_modules - this exceeds App Service limits
       - name: Upload artifact for deployment job
-        working-directory: web1/knwgo-web-1 
         uses: actions/upload-artifact@v2
         with:
           name: node-app
           path: |
-            .
-            !./node_modules
+            ./web1/knwgo-web-1/dist 
 
   deploy:
     runs-on: ubuntu-latest
