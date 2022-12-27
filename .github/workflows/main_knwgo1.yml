@@ -36,8 +36,6 @@ jobs:
           path: |
             ./web1/knwgo-web-1
             !./web1/knwgo-web-1/node_modules
-            !./web1/knwgo-web-1/src
-
 
   deploy:
     runs-on: ubuntu-latest
