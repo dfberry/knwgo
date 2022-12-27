@@ -27,6 +27,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+          cp package.production.json dist/package.json
 
       # Do not upload node_modules - this exceeds App Service limits
       - name: Upload artifact for deployment job
@@ -35,6 +36,7 @@ jobs:
           name: node-app
           path: |
             ./web1/knwgo-web-1
+            !./web1/knwgo-web-1/node_modules
 
   deploy:
     runs-on: ubuntu-latest
