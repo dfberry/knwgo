@@ -34,7 +34,8 @@ jobs:
         with:
           name: node-app
           path: |
-            ./web1/knwgo-web-1/dist 
+            ./web1/knwgo-web-1
+            !./web1/knwgo-web-1/node_modules
 
   deploy:
     runs-on: ubuntu-latest
