@@ -1,3 +1,6 @@
+* 0.0.3 (2022-12-27)
+    * fix: don't add node_modules to build artifact b/c it exceeds file limit and isn't necessary
+
 * 0.0.2 (2022-12-27)
     * change: allow for cosmos db style connection string to mongodb
 
