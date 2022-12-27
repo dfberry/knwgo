@@ -5,8 +5,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "prestart": "npm install && ls -la && npm list -g --depth=0",
-    "start": "node dist/server.js"
+    "prestart": "ls -la && npm list -g --depth=0",
+    "start": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
