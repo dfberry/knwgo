@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
 
-        "module": "es2022",
+        "module": "CommonJS",
         "moduleResolution": "Node",
-
+        "target" :"ES5",
         "sourceMap": true,
         "outDir": "dist",
         "removeComments": true,
@@ -27,8 +27,4 @@
     },
     "exclude": ["node_modules/**/*", "dist/**/*"],
     "include": ["./src/**/*.tsx", "./src/**/*.ts"],
-    "ts-node": {
-        "esm": true
-    },
-    "lib": ["esnext"]
 }
