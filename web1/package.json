@@ -5,18 +5,9 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "listing": "ls -la",
-    "prestart": "npm run listing",
     "start": "node dist/server.js",
-    "start:dev": "node dist/server.js",
-    "dev": "nodemon",
-    "build": "swc src -d dist --source-maps --copy-files",
-    "build:tsc": "tsc && tsc-alias",
-    "test": "jest --forceExit --detectOpenHandles",
-    "lint": "eslint --ignore-path .gitignore --ext .ts src/",
-    "lint:fix": "npm run lint -- --fix",
-    "deploy:prod": "npm run build && pm2 start ecosystem.config.js --only prod",
-    "deploy:dev": "pm2 start ecosystem.config.js --only dev"
+    "build": "tsc",
+    "test": "jest --forceExit --detectOpenHandles"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/dina/repos/dfberry/knwgo/web1/knwgo-web-1/src/logs/error/.98e53402d8632f4da3ea356b7098070d131eca79-audit.json",
+    "files": [
+        {
+            "date": 1672157444273,
+            "name": "/Users/dina/repos/dfberry/knwgo/web1/knwgo-web-1/src/logs/error/2022-12-27.log",
+            "hash": "10654963abe7a614365c7c06e6318d497eb5d1004fb2d62fb77cbc585b7bbccc"
+        }
+    ],
+    "hashType": "sha256"
+}
