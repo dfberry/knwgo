@@ -6,8 +6,6 @@ import { blobRoute } from './routes/blob';
 const app: Express = express();
 const port: number = Number(process.env.PORT) || 3000;
 
-
-
 app.use('/api/blobs', blobsRoute);
 app.use('/api/blob', blobRoute);
 
