@@ -1,11 +1,21 @@
 import express, { Express, Request, Response } from 'express';
 
+import { getConfig, Config } from './shared/config';
 import { blobsRoute } from './routes/blobs';
 import { blobRoute } from './routes/blob';
+import cors from 'cors';
 
+const APP_CONFIG = getConfig();
 const app: Express = express();
-const port: number = Number(process.env.PORT) || 3000;
+const port: number = APP_CONFIG.port || 8080;
 
+app.use(
+  cors({
+    origin: '*'
+  })
+);
+
+app.set('appConfig', APP_CONFIG);
 app.use('/api/blobs', blobsRoute);
 app.use('/api/blob', blobRoute);
 
