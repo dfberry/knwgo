@@ -1,3 +1,6 @@
+* 0.0.3 
+    * Layout
+    * Cookie consent
 * 0.0.2
     * Parcel product build into /prod directory
 * 0.0.1
