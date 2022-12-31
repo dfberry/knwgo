@@ -21,16 +21,7 @@ jobs:
         with:
           node-version: '18.x'
 
-      # Build client production into /prod directory
-      - name: Client - install, build
-        run: |
-          cd client-1
-          npm install
-          npm run build:prod --if-present
-          ls -la prod
-          ls -la ../website-1
-          cp prod/*.* ../website-1/client
-          ls -la ../website-1/client
+
 
       # Build server production into dist
       - name: Server - install, build
@@ -39,6 +30,17 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+          mkdir client
+
+      # Build client production into /prod directory
+      - name: Client - install, build
+        run: |
+          cd client-1
+          npm install
+          npm run build:prod --if-present
+          ls -la prod
+          mv prod/*.* ../website-1/client
+          ls -la ../website-1/client
 
       # Copy everything except node_modules
       - name: Upload artifact for deployment job
