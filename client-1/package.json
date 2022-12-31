@@ -1,11 +1,11 @@
 {
   "name": "client-1",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run build:all & parcel public/index.html",
+    "dev": "npm run build:all & parcel --open chrome public/index.html",
     "build": "tsc",
     "clean:dist": "rm -rf dist",
     "clean": "npm run clean:dist",
@@ -31,6 +31,7 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@azberry/shared-1": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.9.4"

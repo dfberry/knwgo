@@ -1,8 +1,24 @@
-import {
+import { 
+  BlobPageResponse,
+  BlobResponse,
   BlobStorage,
+  ContainerResponse,
   HierarchicalListingResponse,
-  PageSettings
+  PageSettings,
+  StorageResponse,
+  BlobStorageModels
+ } from '@azberry/az-simple';
+
+export type {
+  BlobPageResponse,
+  BlobResponse,
+  ContainerResponse,
+  HierarchicalListingResponse,
+  PageSettings,
+  StorageResponse,
+  BlobStorageModels
 } from '@azberry/az-simple';
+
 import { BlobSecrets } from './config';
 
 export async function getBlobListFromContainer(
@@ -10,8 +26,8 @@ export async function getBlobListFromContainer(
   containerName: string,
   prefixStr = '',
   delimiter = '/',
-  pageSettings: PageSettings = { maxPageSize: 10, continuationToken: '' }
-): Promise<HierarchicalListingResponse> {
+  pageSettings: BlobStorageModels.PageSettings = { maxPageSize: 10, continuationToken: '' }
+): Promise<BlobStorageModels.HierarchicalListingResponse> {
   const client = new BlobStorage(
     blobSecrets.accountName,
     blobSecrets.accountKey

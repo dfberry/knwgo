@@ -1,6 +1,9 @@
 import e, { Router } from 'express';
-import { Config } from '../shared/config';
-import { getBlobListFromContainer } from '../shared/blobStrorage';
+import {
+  Config,
+  getBlobListFromContainer,
+  HierarchicalListingResponse
+} from '@azberry/shared-1';
 import { PageSettings } from '@azberry/az-simple';
 
 export const blobsRoute = Router();
@@ -38,7 +41,7 @@ blobsRoute.get('/', async (req, res) => {
   console.log(pageSettings);
 
   const appConfig: Config = req.app.get('appConfig');
-  const list = await getBlobListFromContainer(
+  const list: HierarchicalListingResponse = await getBlobListFromContainer(
     appConfig.blob,
     containerName,
     prefix,

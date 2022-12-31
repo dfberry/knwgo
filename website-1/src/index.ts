@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 
-import { getConfig, Config } from './shared/config';
+import { getConfig, Config } from '@azberry/shared-1';
 import { blobsRoute } from './routes/blobs';
 import { blobRoute } from './routes/blob';
 import cors from 'cors';
