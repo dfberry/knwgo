@@ -2,11 +2,12 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Node.js app to Azure Web App - dfberry-test
+# version: 0.0.1
 
 on:
   push:
     branches:
-      - 1231-client-prod
+      - main
   workflow_dispatch:
 
 jobs:
