@@ -9,6 +9,8 @@ const APP_CONFIG = getConfig();
 const app: Express = express();
 const port: number = APP_CONFIG.port || 8080;
 
+app.use(express.static('client'));
+
 app.use(
   cors({
     origin: '*'

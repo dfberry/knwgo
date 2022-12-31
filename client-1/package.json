@@ -1,8 +1,7 @@
 {
   "name": "client-1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run build:all & parcel --open chrome public/index.html",
@@ -10,10 +9,12 @@
     "clean:dist": "rm -rf dist",
     "clean": "npm run clean:dist",
     "build:all": "npm run clean && npm run format && npm run lint && npm run build",
+    "build:prod": "npm run build:all && npm run build:parcel",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --quiet --fix --color",
     "start": "parcel public/index.html",
-    "build:parcel": "parcel build src/index.html"
+    "build:parcel": "parcel build public/index.html --dist-dir prod"
+
   },
   "author": "",
   "license": "ISC",
