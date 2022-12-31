@@ -2,6 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Node.js app to Azure Web App - dfberry-test
+# version: 0.0.1
 
 on:
   push:
@@ -21,12 +22,28 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install, build, and test
+
+
+      # Build server production into dist
+      - name: Server - install, build
         run: |
           cd website-1
           npm install
           npm run build --if-present
           npm run test --if-present
+          mkdir client
+
+      # Build client production into /prod directory
+      - name: Client - install, build
+        run: |
+          cd client-1
+          npm install
+          npm run build:prod --if-present
+          ls -la prod
+          mv prod/*.* ../website-1/client
+          ls -la ../website-1/client
+
+      # Copy everything except node_modules
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:

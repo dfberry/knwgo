@@ -1,3 +1,5 @@
+* 0.0.2
+    * Parcel product build into /prod directory
 * 0.0.1
     * New react project with parcel and typescript
     * Shows raw data if ?test=1
