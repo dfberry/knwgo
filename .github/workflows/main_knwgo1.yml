@@ -28,7 +28,7 @@ jobs:
           npm install
           npm run build:prod --if-present
           ls -la prod
-          cp prod/*.* ../website-1/client/*.*
+          cp prod/*.* ../website-1/client/
           ls -la ../website-1/client
 
       # Build server production into dist
